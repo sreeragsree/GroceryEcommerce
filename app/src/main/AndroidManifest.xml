@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.groceryecommerce">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:name="com.groceryecommerce.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.groceryecommerce.activity.PaypalActivity" />
+        <activity android:name="com.groceryecommerce.activity.ChanegPasswordActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.BaseActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.AboutsActivity"
+            android:label="About"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.TramsAndConditionActivity"
+            android:label="Terms &amp; Conditions"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name="com.groceryecommerce.activity.PrivecyPolicyActivity"
+            android:label="Privacy &amp; Policy"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.ContectusActivity"
+            android:label="Contact us"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+
+        <activity
+            android:name="com.groceryecommerce.activity.CoupunActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.NotificationActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.ItemDetailsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.SelectAreaActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.InfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.ForgotActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.MyOrderListActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.ProfileActivity"
+            android:label="My Profile"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.AddressActivity"
+            android:label="My Address"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.FeedBackActivity"
+            android:label="FeedBack"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.RatesActivity"
+            android:label="Rate us"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.HomeActivity"
+            android:label="@string/title_activity_home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustNothing"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.SingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.FirstActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.groceryecommerce.activity.PopRatesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Dialog"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.RazerpayActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.NotificationDetailsActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name="com.groceryecommerce.activity.VerifyPhoneActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+    </application>
+
+</manifest>
