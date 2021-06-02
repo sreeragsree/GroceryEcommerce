@@ -1,0 +1,76 @@
+{
+  "project_info": {
+    "project_number": "815522923266",
+    "project_id": "groceryecommerce-4dc48",
+    "storage_bucket": "groceryecommerce-4dc48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815522923266:android:043d5d163cb91fff54b81b",
+        "android_client_info": {
+          "package_name": "com.ecomsyshubdelivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815522923266-h6bjatprqqes5cknnjcdt14to8q4snne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUOB3TJIp-WB4QhShl3OcDu9qKXiHWqn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815522923266-h6bjatprqqes5cknnjcdt14to8q4snne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815522923266:android:c8f22bdd88df03f554b81b",
+        "android_client_info": {
+          "package_name": "com.groceryecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815522923266-pt33s6d37s8ep29gnm48qji3nd5147hc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.groceryecommerce",
+            "certificate_hash": "8d3c25ce959d2036a8d1aee4752b0bc04517ac4b"
+          }
+        },
+        {
+          "client_id": "815522923266-h6bjatprqqes5cknnjcdt14to8q4snne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUOB3TJIp-WB4QhShl3OcDu9qKXiHWqn0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815522923266-h6bjatprqqes5cknnjcdt14to8q4snne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
