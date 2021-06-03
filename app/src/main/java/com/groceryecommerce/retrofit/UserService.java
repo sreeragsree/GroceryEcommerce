@@ -15,7 +15,7 @@ public interface UserService {
     @POST(APIClient.APPEND_URL + "subcategory.php")
     Call<JsonObject> getSubcategory(@Body JsonObject object);
 
-    @POST(APIClient.APPEND_URL + "product.php")
+    @POST(APIClient.APPEND_URL + "product_Info.php")
     Call<JsonObject> getGetProduct(@Body JsonObject object);
 
     @POST(APIClient.APPEND_URL + "home.php")
