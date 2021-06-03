@@ -100,22 +100,27 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
+
         unbinder = ButterKnife.bind(this, view);
         bannerDatumList = new ArrayList<>();
         sessionManager = new SessionManager(mContext);
         homeListFragment = this;
+
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
         LinearLayoutManager mLayoutManager1 = new LinearLayoutManager(mContext);
         mLayoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerReleted.setLayoutManager(mLayoutManager1);
+
         categoryList = new ArrayList<>();
         adapter = new CategoryAdp(mContext, categoryList, this);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+
         adapterReletedi = new ReletedItemAdp(mContext, productItems, this);
         recyclerReleted.setItemAnimator(new DefaultItemAnimator());
         recyclerReleted.setAdapter(adapterReletedi);
         user = sessionManager.getUserDetails("");
+
         getHome();
         return view;
     }
@@ -269,8 +274,10 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
     @Override
     public void  callback(JsonObject result, String callNo) {
         try {
-            if(callNo.equalsIgnoreCase("homepage")){
+            if(callNo.equalsIgnoreCase("homepage"))
+            {
                 HomeActivity.custPrograssbar.closePrograssBar();
+
                 bannerDatumList=new ArrayList<>();
                 categoryList=new ArrayList<>();
                 Gson gson = new Gson();

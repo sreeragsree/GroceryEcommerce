@@ -13,6 +13,7 @@ import retrofit2.Response;
 
 public class GetResult {
     public static MyListener myListener;
+
     public void callForLogin(Call<JsonObject> call, String callno) {
         if(!Utiles.internetChack()){
             Toast.makeText(MyApplication.mContext, "Please Check Your Internet Connection", Toast.LENGTH_SHORT).show();

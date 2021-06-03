@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 
 public interface UserService {
 
-    @POST(APIClient.APPEND_URL + "cat.php")
+    @POST(APIClient.APPEND_URL + "category.php")
     Call<JsonObject> getCat(@Body JsonObject object);
 
     @POST(APIClient.APPEND_URL + "subcategory.php")
@@ -95,4 +95,9 @@ public interface UserService {
 
     @POST(APIClient.APPEND_URL + "check_coupon.php")
     Call<JsonObject> CheckCoupun(@Body JsonObject object);
+
+    // Changes made
+
+    @POST(APIClient.APPEND_URL + "fetchbannerInfo.php")
+    Call<JsonObject> FetchBanner(@Body JsonObject object);
 }

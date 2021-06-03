@@ -8,8 +8,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIClient {
     static Retrofit retrofit = null;
-    public static String baseUrl = "https://groceryecommerce.codesters.com/";
-    public static final String APPEND_URL = "main/";
+    public static String baseUrl = "https://ecomsyshub.000webhostapp.com/";
+    public static final String APPEND_URL = "demo/";
 
     public static UserService getInterface() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

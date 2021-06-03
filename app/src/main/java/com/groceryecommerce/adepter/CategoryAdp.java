@@ -59,9 +59,9 @@ public class CategoryAdp extends RecyclerView.Adapter<CategoryAdp.MyViewHolder> 
         CatItem category = categoryList.get(position);
         holder.title.setText(category.getCatname() + "(" + category.getCount() + ")");
 
-        String imgtest = (APIClient.baseUrl + "demoapi/" + category.getCatimg());
+        String imgtest = (APIClient.baseUrl  + category.getCatimg());
         Log.d("test",imgtest);
-        Glide.with(mContext).load(APIClient.baseUrl + "demoapi/" + category.getCatimg()).thumbnail(Glide.with(mContext).load(R.drawable.ezgifresize)).into(holder.thumbnail);
+        Glide.with(mContext).load(APIClient.baseUrl + category.getCatimg()).thumbnail(Glide.with(mContext).load(R.drawable.ezgifresize)).into(holder.thumbnail);
         holder.thumbnail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

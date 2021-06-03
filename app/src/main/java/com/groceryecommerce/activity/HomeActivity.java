@@ -128,6 +128,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         ButterKnife.bind(this);
         txtNoti = findViewById(R.id.txt_noti);
         custPrograssbar = new CustPrograssbar();

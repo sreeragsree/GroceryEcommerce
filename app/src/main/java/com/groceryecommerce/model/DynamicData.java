@@ -12,7 +12,6 @@ public class DynamicData {
     @SerializedName("product_data")
     private List<ProductItem> dynamicItems;
 
-
     public String getTitle() {
         return title;
     }

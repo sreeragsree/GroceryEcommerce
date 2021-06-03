@@ -8,12 +8,12 @@ public class BannerItem {
 
     @SerializedName("bimg")
     private String mBimg;
+
     @SerializedName("id")
     private String mId;
 
     @SerializedName("cid")
     private String cid;
-
 
     public String getCid() {
         return cid;

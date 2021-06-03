@@ -7,8 +7,6 @@ import com.google.gson.annotations.SerializedName;
 @SuppressWarnings("unused")
 public class Home {
 
-
-
     @SerializedName("ResponseCode")
     private String mResponseCode;
     @SerializedName("ResponseMsg")
