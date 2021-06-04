@@ -208,7 +208,10 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
         public Object instantiateItem(ViewGroup container, final int position) {
             View itemView = layoutInflater.inflate(R.layout.item_banner, container, false);
             ImageView imageView = (ImageView) itemView.findViewById(R.id.imageView);
-            Glide.with(mContext).load(APIClient.baseUrl + "/" + bannerDatumList.get(position).getBimg()).placeholder(R.drawable.empty).into(imageView);
+
+            Log.d("banner",bannerDatumList.get(position).getBimg());
+
+            Glide.with(mContext).load(APIClient.baseUrl  + bannerDatumList.get(position).getBimg()).placeholder(R.drawable.empty).into(imageView);
             container.addView(itemView);
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -235,6 +238,7 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("uid", user.getId());
+            Log.d("postUid",user.getId());
             JsonParser jsonParser = new JsonParser();
             Call<JsonObject> call = APIClient.getInterface().getHome((JsonObject) jsonParser.parse(jsonObject.toString()));
             GetResult getResult = new GetResult();
@@ -281,12 +285,22 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
                 bannerDatumList=new ArrayList<>();
                 categoryList=new ArrayList<>();
                 Gson gson = new Gson();
+                Log.d("ResultHome",result.toString());
                 Home home = gson.fromJson(result.toString(), Home.class);
+
                 categoryList.addAll(home.getResultHome().getCatItems());
+                for (CatItem bannerItem : categoryList)
+                {
+                   Log.d("BannerTest","test"+bannerItem.getCatimg()+bannerItem.getId()+bannerItem.getCatname()+bannerItem.getCount());
+                }
                 adapter = new CategoryAdp(mContext, categoryList, this);
                 recyclerView.setAdapter(adapter);
 
                 bannerDatumList.addAll(home.getResultHome().getBannerItems());
+//                for (BannerItem bannerItem : bannerDatumList)
+//                {
+//                   Log.d("BannerTest","test"+bannerItem.getBimg()+bannerItem.getId()+bannerItem.getCid());
+//                }
                 MyCustomPagerAdapter myCustomPagerAdapter = new MyCustomPagerAdapter(mContext, bannerDatumList);
                 viewPager.setAdapter(myCustomPagerAdapter);
                 viewPager.startAutoScroll();

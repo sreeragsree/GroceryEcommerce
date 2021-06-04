@@ -28,7 +28,6 @@ public class MainDataHome {
     @SerializedName("tax")
     private String tax;
 
-
     public String getTax() {
         return tax;
     }

@@ -103,6 +103,7 @@ public class LoginActivity extends AppCompatActivity implements GetResult.MyList
             Gson gson = new Gson();
             LoginUser response = gson.fromJson(result.toString(), LoginUser.class);
             Toast.makeText(LoginActivity.this, "" + response.getResponseMsg(), Toast.LENGTH_LONG).show();
+
             if (response.getResult().equals("true")) {
                 sessionManager.setUserDetails("", response.getUser());
                 sessionManager.setBooleanData(login,true);

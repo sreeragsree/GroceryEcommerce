@@ -37,6 +37,7 @@ public class ReletedItemAllAdp extends RecyclerView.Adapter<ReletedItemAllAdp.Vi
     private List<ProductItem> mData;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
+
     Context mContext;
     DatabaseHelper helper;
     SessionManager sessionManager;
@@ -53,6 +54,7 @@ public class ReletedItemAllAdp extends RecyclerView.Adapter<ReletedItemAllAdp.Vi
         display.getSize(size);
         helper = new DatabaseHelper(context);
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.releteditem_all_custome, parent, false);
@@ -67,7 +69,7 @@ public class ReletedItemAllAdp extends RecyclerView.Adapter<ReletedItemAllAdp.Vi
         } else {
             holder.lvlOutofstock.setVisibility(View.GONE);
         }
-        Glide.with(mContext).load(APIClient.baseUrl + "/" + datum.getProductImage()).thumbnail(Glide.with(mContext).load(R.drawable.lodingimage)).into(holder.imgIcon);
+        Glide.with(mContext).load(APIClient.baseUrl + datum.getProductImage()).thumbnail(Glide.with(mContext).load(R.drawable.lodingimage)).into(holder.imgIcon);
         holder.txtTitle.setText("" + datum.getProductName());
         if (datum.getmDiscount() > 0) {
             double res = (Double.parseDouble(datum.getPrice().get(0).getProductPrice()) / 100.0f) * datum.getmDiscount();

@@ -39,6 +39,7 @@ import retrofit2.Call;
 import static com.groceryecommerce.utils.Utiles.isvarification;
 
 public class SingActivity extends AppCompatActivity implements GetResult.MyListener {
+
     CustPrograssbar custPrograssbar;
     SessionManager sessionManager;
     @BindView(R.id.ed_username)
@@ -59,6 +60,7 @@ public class SingActivity extends AppCompatActivity implements GetResult.MyListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
         ButterKnife.bind(this);
+
         sessionManager = new SessionManager(SingActivity.this);
         custPrograssbar = new CustPrograssbar();
         getCode();
@@ -84,15 +86,16 @@ public class SingActivity extends AppCompatActivity implements GetResult.MyListe
         GetResult getResult = new GetResult();
         getResult.setMyListener(this);
         getResult.callForLogin(call, "2");
-
     }
 
     private void isRegister() {
+
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("email", edAlternatmob.getText().toString());
             jsonObject.put("ccode", codeSelect);
             JsonParser jsonParser = new JsonParser();
+            Toast.makeText(this, "You are registering with us ", Toast.LENGTH_SHORT).show();
             Call<JsonObject> call = APIClient.getInterface().getForgot((JsonObject) jsonParser.parse(jsonObject.toString()));
             GetResult getResult = new GetResult();
             getResult.setMyListener(this);
@@ -109,6 +112,7 @@ public class SingActivity extends AppCompatActivity implements GetResult.MyListe
             if (callNo.equalsIgnoreCase("1")) {
                 custPrograssbar.closePrograssBar();
                 Gson gson = new Gson();
+
                 RestResponse response = gson.fromJson(result.toString(), RestResponse.class);
                 if (response.getResult().equals("true")) {
                     Toast.makeText(SingActivity.this, "Mobile Number Already Registered", Toast.LENGTH_LONG).show();
