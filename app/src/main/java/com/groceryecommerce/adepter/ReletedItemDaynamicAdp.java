@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -143,7 +144,7 @@ public class ReletedItemDaynamicAdp extends RecyclerView.Adapter<ReletedItemDayn
         @BindView(R.id.img_card)
         ImageView imgCard;
         @BindView(R.id.lvl_outofstock)
-        LinearLayout lvlOutofstock;
+        RelativeLayout lvlOutofstock;
 
         @BindView(R.id.tv_carttext)
         TextView tv_carttext;

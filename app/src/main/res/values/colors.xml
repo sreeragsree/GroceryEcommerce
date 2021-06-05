@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#FF5252</color>
-    <color name="colorPrimaryDark">#ff9859</color>
+    <color name="colorPrimaryDark">#02a1ff</color>
     <color name="colorAccent">#FF5252</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorOffWhite">#FAFAFA</color>
@@ -17,5 +17,8 @@
 
     <color name="orange">#ff9859</color>
     <color name="green">#00C853</color>
+    <color name="mildbackground">#EAEEF1</color>
+    <color name="mildRed">#FB5B6D</color>
+    <color name="mildyellow">#ffba60</color>
 
 </resources>

@@ -70,7 +70,6 @@ public class CategoryFragment extends Fragment implements CategoryInnerAdapter.R
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -83,12 +82,12 @@ public class CategoryFragment extends Fragment implements CategoryInnerAdapter.R
         user = sessionManager.getUserDetails("");
 
         // grid layout
-        //recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
 
         // horizontal card layout
-        LinearLayoutManager mLayoutManager1 = new LinearLayoutManager(mContext);
-        mLayoutManager1.setOrientation(LinearLayoutManager.VERTICAL);
-        recyclerView.setLayoutManager(mLayoutManager1);
+//        LinearLayoutManager mLayoutManager1 = new LinearLayoutManager(mContext);
+//        mLayoutManager1.setOrientation(LinearLayoutManager.VERTICAL);
+//        recyclerView.setLayoutManager(mLayoutManager1);
 
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         HomeActivity.getInstance().setFrameMargin(60);

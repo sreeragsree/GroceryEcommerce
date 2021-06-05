@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -147,7 +148,8 @@ public class ReletedItemAdp extends RecyclerView.Adapter<ReletedItemAdp.ViewHold
         @BindView(R.id.lvl_click)
         LinearLayout lvlClick;
         @BindView(R.id.lvl_outofstock)
-        LinearLayout lvlOutofstock;
+        RelativeLayout lvlOutofstock;
+        // changed to relative layout
         ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

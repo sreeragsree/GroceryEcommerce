@@ -35,7 +35,7 @@ public class CategoryInnerAdapter extends RecyclerView.Adapter<CategoryInnerAdap
         public TextView title,pronum;
         public ImageView thumbnail;
         public ImageView overflow;
-        public LinearLayout ll_viewFull;
+        public LinearLayout ll_viewFull,ll_togo;
 
         public MyViewHolder(View view) {
             super(view);
@@ -43,6 +43,7 @@ public class CategoryInnerAdapter extends RecyclerView.Adapter<CategoryInnerAdap
             pronum = (TextView) view.findViewById(R.id.txt_pronum);
             thumbnail = view.findViewById(R.id.imageView);
             ll_viewFull = view.findViewById(R.id.ll_viewFull);
+            ll_togo = view.findViewById(R.id.ll_togo);
         }
     }
 
@@ -56,7 +57,7 @@ public class CategoryInnerAdapter extends RecyclerView.Adapter<CategoryInnerAdap
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.category_innercard_horizontal, parent, false);
+                .inflate(R.layout.category_inner_round, parent, false);
         return new MyViewHolder(itemView);
 
     }
@@ -66,13 +67,13 @@ public class CategoryInnerAdapter extends RecyclerView.Adapter<CategoryInnerAdap
 
         CatItem category = categoryList.get(position);
         holder.title.setText(category.getCatname());
-        holder.pronum.setText(category.getCount()+" Subcategories");
+//        holder.pronum.setText(category.getCount()+" Subcategories");
 
         String imgtest = (APIClient.baseUrl  + category.getCatimg());
         Log.d("test",imgtest);
         Glide.with(mContext).load(APIClient.baseUrl + category.getCatimg()).thumbnail(Glide.with(mContext).load(R.drawable.ezgifresize)).into(holder.thumbnail);
 
-        holder.ll_viewFull.setOnClickListener(new View.OnClickListener() {
+        holder.ll_togo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

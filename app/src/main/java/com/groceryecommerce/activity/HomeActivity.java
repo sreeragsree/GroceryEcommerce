@@ -152,20 +152,23 @@ public class HomeActivity extends AppCompatActivity {
 
     public void setFrameMargin(int top) {
         CoordinatorLayout.LayoutParams params = (CoordinatorLayout.LayoutParams) lvlMainhome.getLayoutParams();
-        params.setMargins(0, top, 0, 0);
+        params.setMargins(0, 0, 0, 0);
         lvlMainhome.setLayoutParams(params);
     }
 
     @SuppressLint("SetTextI18n")
     private void setDrawer() {
+
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_icon);
+        //drawerLayout.addDrawerListener(toggle);
+//        toggle.syncState();
+//        getSupportActionBar().setHomeButtonEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_icon);
+
+
         char first = user.getName().charAt(0);
         Log.e("first", "-->" + first);
         txtfirstl.setText("" + first);
