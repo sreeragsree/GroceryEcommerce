@@ -106,10 +106,17 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
         sessionManager = new SessionManager(mContext);
         homeListFragment = this;
 
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+        // to set category linear horizontal
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+
         LinearLayoutManager mLayoutManager1 = new LinearLayoutManager(mContext);
         mLayoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerReleted.setLayoutManager(mLayoutManager1);
+
+        // change related adapter rcv to grid
+        //recyclerReleted.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
         categoryList = new ArrayList<>();
         adapter = new CategoryAdp(mContext, categoryList, this);
@@ -317,6 +324,14 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
                     txtNoti.setVisibility(View.VISIBLE);
                     txtNoti.setText("" + home.getResultHome().getRemainNotification());
                 }
+
+                dynamicDataList = home.getResultHome().getDynamicData();
+                for (DynamicData data : dynamicDataList)
+                {
+                    Log.d("dynamic_Data","hi"+data.getTitle());
+                }
+                setJoinPlayrList(lvlSelected, dynamicDataList);
+
                 sessionManager.setStringData(currncy, home.getResultHome().getMainData().getCurrency());
                 sessionManager.setStringData(privacy, home.getResultHome().getMainData().getPrivacyPolicy());
                 sessionManager.setStringData(aboutUs, home.getResultHome().getMainData().getAboutUs());
@@ -327,8 +342,12 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
                 sessionManager.setStringData(tax, home.getResultHome().getMainData().getTax());
 
                 productItems = home.getResultHome().getProductItems();
-                dynamicDataList = home.getResultHome().getDynamicData();
-                setJoinPlayrList(lvlSelected, dynamicDataList);
+//                dynamicDataList = home.getResultHome().getDynamicData();
+//                for (DynamicData data : dynamicDataList)
+//                {
+//                    Log.d("dynamic_Data","hi"+data.getTitle());
+//                }
+//                setJoinPlayrList(lvlSelected, dynamicDataList);
             }
 
         } catch (Exception e) {

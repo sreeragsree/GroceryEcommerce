@@ -137,6 +137,8 @@ public class HomeActivity extends AppCompatActivity {
         user = sessionManager.getUserDetails("");
         homeActivity = this;
         setDrawer();
+
+        lvlActionsearch.setVisibility(View.GONE);
     }
 
     public static HomeActivity getInstance() {
@@ -289,7 +291,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void serchviewShow() {
-        lvlActionsearch.setVisibility(View.VISIBLE);
+        lvlActionsearch.setVisibility(View.GONE);
     }
 
     public void titleChange(String s) {

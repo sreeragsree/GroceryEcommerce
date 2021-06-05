@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
+
     tools:context=".fragment.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -20,10 +21,9 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="200dp"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-
                 >
 
                 <com.groceryecommerce.utils.AutoScrollViewPager
@@ -59,7 +59,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:padding="5dp"
-                        android:text="Stay Home \nFood &amp; Groceries"
+                        android:text="Categories"
                         android:textColor="@color/colorBalck"
                         android:textSize="18dp"
                         android:textStyle="bold" />

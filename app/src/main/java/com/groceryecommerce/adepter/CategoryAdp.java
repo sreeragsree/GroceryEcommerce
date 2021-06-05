@@ -24,7 +24,6 @@ public class CategoryAdp extends RecyclerView.Adapter<CategoryAdp.MyViewHolder> 
 
     public interface RecyclerTouchListener {
         public void onClickItem(String titel, int position);
-
         public void onLongClickItem(View v, int position);
     }
 
@@ -57,7 +56,7 @@ public class CategoryAdp extends RecyclerView.Adapter<CategoryAdp.MyViewHolder> 
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
         CatItem category = categoryList.get(position);
-        holder.title.setText(category.getCatname() + "(" + category.getCount() + ")");
+        holder.title.setText(category.getCatname().substring(0,6)+"...");
 
         String imgtest = (APIClient.baseUrl  + category.getCatimg());
         Log.d("test",imgtest);

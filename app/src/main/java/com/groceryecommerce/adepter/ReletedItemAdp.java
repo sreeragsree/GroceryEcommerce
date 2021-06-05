@@ -74,7 +74,7 @@ public class ReletedItemAdp extends RecyclerView.Adapter<ReletedItemAdp.ViewHold
             holder.priceoofer.setText(sessionManager.getStringData(currncy)  + datum.getPrice().get(0).getProductPrice());
             holder.txtPrice.setText(sessionManager.getStringData(currncy)  + new DecimalFormat("##.##").format(res));
             holder.lvlOffer.setVisibility(View.VISIBLE);
-            holder.txtOffer.setText(datum.getmDiscount() + "% Off");
+            holder.txtOffer.setText(datum.getmDiscount() + " % \n Off");
         } else {
             holder.lvlOffer.setVisibility(View.GONE);
             holder.priceoofer.setVisibility(View.GONE);
@@ -82,11 +82,13 @@ public class ReletedItemAdp extends RecyclerView.Adapter<ReletedItemAdp.ViewHold
         }
         int qrt = helper.getCard(datum.getId(), datum.getPrice().get(0).getProductPrice());
         if (qrt >= 1) {
-            holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.bg_red_shape));
-            holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_minus_rounded));
+            holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.remove_from_cart_red));
+            holder.tv_carttext.setText("Remove Item");
+//            holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_baseline_remove_shopping_cart_24));
         } else {
-            holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.bg_green_plus));
-            holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_plus_rounded));
+            holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.add_to_cart_green));
+            holder.tv_carttext.setText("Add to Cart");
+//            holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_baseline_add_shopping_cart_24));
         }
         holder.lvlCardbg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -94,8 +96,9 @@ public class ReletedItemAdp extends RecyclerView.Adapter<ReletedItemAdp.ViewHold
                 int qrt = helper.getCard(datum.getId(), datum.getPrice().get(0).getProductPrice());
                 if (qrt >= 1) {
                     helper.deleteRData(datum.getId(),datum.getPrice().get(0).getProductPrice());
-                    holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.bg_green_plus));
-                    holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_plus_rounded));
+                    holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.add_to_cart_green));
+                    holder.tv_carttext.setText("Add to Cart");
+//                    holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_baseline_add_shopping_cart_24));
                 } else {
 
                     MyCart myCart = new MyCart();
@@ -107,8 +110,9 @@ public class ReletedItemAdp extends RecyclerView.Adapter<ReletedItemAdp.ViewHold
                     myCart.setQty("1");
                     myCart.setDiscount(datum.getmDiscount());
                     helper.insertData(myCart);
-                    holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.bg_red_shape));
-                    holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_minus_rounded));
+                    holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.remove_from_cart_red));
+                    holder.tv_carttext.setText("Remove Item");
+//                    holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_baseline_remove_shopping_cart_24));
                 }
             }
         });
@@ -131,6 +135,10 @@ public class ReletedItemAdp extends RecyclerView.Adapter<ReletedItemAdp.ViewHold
         LinearLayout lvlOffer;
         @BindView(R.id.img_icon)
         ImageView imgIcon;
+
+        @BindView(R.id.tv_carttext)
+        TextView tv_carttext;
+
 
         @BindView(R.id.lvl_cardbg)
         LinearLayout lvlCardbg;

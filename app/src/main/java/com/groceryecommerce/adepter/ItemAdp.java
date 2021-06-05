@@ -68,7 +68,6 @@ public class ItemAdp extends RecyclerView.Adapter<ItemAdp.ViewHolder> {
             holder.lvlOutofstock.setVisibility(View.VISIBLE);
         } else {
             holder.lvlOutofstock.setVisibility(View.GONE);
-
         }
         Glide.with(mContext).load(APIClient.baseUrl + "/" + datum.getProductImage()).thumbnail(Glide.with(mContext).load(R.drawable.ezgifresize)).into(holder.imgIcon);
         holder.txtTitle.setText("" + datum.getProductName());

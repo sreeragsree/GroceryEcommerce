@@ -1,5 +1,6 @@
 package com.groceryecommerce.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +9,10 @@ import android.view.ViewGroup;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.groceryecommerce.adepter.CategoryInnerAdapter;
 import com.groceryecommerce.model.Category;
 import com.groceryecommerce.model.User;
 import com.groceryecommerce.retrofit.APIClient;
@@ -37,16 +40,19 @@ import retrofit2.Call;
 import static com.groceryecommerce.activity.HomeActivity.homeActivity;
 
 
-public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTouchListener, GetResult.MyListener {
+public class CategoryFragment extends Fragment implements CategoryInnerAdapter.RecyclerTouchListener, GetResult.MyListener {
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
-    CategoryAdp adapter;
+    CategoryInnerAdapter adapter;
     List<CatItem> categoryList;
     Unbinder unbinder;
     SessionManager sessionManager;
     User user;
+    private Context mContext;
+
     public CategoryFragment() {
         // Required empty public constructor
     }
@@ -75,7 +81,15 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
         categoryList = new ArrayList<>();
         sessionManager = new SessionManager(getActivity());
         user = sessionManager.getUserDetails("");
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+
+        // grid layout
+        //recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 3));
+
+        // horizontal card layout
+        LinearLayoutManager mLayoutManager1 = new LinearLayoutManager(mContext);
+        mLayoutManager1.setOrientation(LinearLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(mLayoutManager1);
+
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         HomeActivity.getInstance().setFrameMargin(60);
         getCategory();
@@ -120,7 +134,8 @@ public class CategoryFragment extends Fragment implements CategoryAdp.RecyclerTo
                 Gson gson = new Gson();
                 Category category = gson.fromJson(result.toString(), Category.class);
                 categoryList = category.getData();
-                adapter = new CategoryAdp(getActivity(), categoryList, this);
+
+                adapter = new CategoryInnerAdapter(getActivity(), categoryList, this);
                 recyclerView.setAdapter(adapter);
             }
         } catch (Exception e) {

@@ -133,6 +133,7 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
             if (callNo.equalsIgnoreCase("1") && result.toString() != null) {
                 Gson gson = new Gson();
                 SubCategory category = gson.fromJson(result.toString(), SubCategory.class);
+
                 if (category.getResult().equalsIgnoreCase("true")) {
                     categoryList = category.getData();
                     if (categoryList.size() != 0) {
