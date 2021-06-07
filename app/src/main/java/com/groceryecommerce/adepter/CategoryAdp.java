@@ -48,7 +48,7 @@ public class CategoryAdp extends RecyclerView.Adapter<CategoryAdp.MyViewHolder> 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.item_category, parent, false);
+                .inflate(R.layout.item_category_squre, parent, false);
         return new MyViewHolder(itemView);
     }
 
@@ -56,7 +56,8 @@ public class CategoryAdp extends RecyclerView.Adapter<CategoryAdp.MyViewHolder> 
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
         CatItem category = categoryList.get(position);
-        holder.title.setText(category.getCatname().substring(0,6)+"...");
+        //holder.title.setText(category.getCatname().substring(0,6)+"...");
+        holder.title.setText(category.getCatname());
 
         String imgtest = (APIClient.baseUrl  + category.getCatimg());
         Log.d("test",imgtest);

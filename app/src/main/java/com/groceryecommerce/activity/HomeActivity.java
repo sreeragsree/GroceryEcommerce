@@ -162,11 +162,11 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        //drawerLayout.addDrawerListener(toggle);
-//        toggle.syncState();
-//        getSupportActionBar().setHomeButtonEnabled(true);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-//        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_icon);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_menu_icon);
 
 
         char first = user.getName().charAt(0);
@@ -294,7 +294,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void serchviewShow() {
-        lvlActionsearch.setVisibility(View.GONE);
+        lvlActionsearch.setVisibility(View.VISIBLE);
     }
 
     public void titleChange(String s) {

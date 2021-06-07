@@ -57,7 +57,7 @@ public class ReletedItemAllAdp extends RecyclerView.Adapter<ReletedItemAllAdp.Vi
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.releteditem_all_custome, parent, false);
+        View view = mInflater.inflate(R.layout.item_card_new, parent, false);
         return new ViewHolder(view);
     }
     @Override
@@ -85,11 +85,11 @@ public class ReletedItemAllAdp extends RecyclerView.Adapter<ReletedItemAllAdp.Vi
         }
         int qrt = helper.getCard(datum.getId(), datum.getPrice().get(0).getProductPrice());
         if (qrt >= 1) {
-            holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.bg_red_shape));
-            holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_minus_rounded));
+            holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.cart_back_remove));
+            holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_baseline_remove_shopping_cart_24));
         } else {
-            holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.bg_green_plus));
-            holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_plus_rounded));
+            holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.cart_back));
+            holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_baseline_add_shopping_cart_24));
         }
         holder.lvlCardbg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,8 +97,8 @@ public class ReletedItemAllAdp extends RecyclerView.Adapter<ReletedItemAllAdp.Vi
                 int qrt = helper.getCard(datum.getId(), datum.getPrice().get(0).getProductPrice());
                 if (qrt >= 1) {
                     helper.deleteRData(datum.getId(),datum.getPrice().get(0).getProductPrice());
-                    holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.bg_green_plus));
-                    holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_plus_rounded));
+                    holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.cart_back));
+                    holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_baseline_add_shopping_cart_24));
                 } else {
 
                     MyCart myCart = new MyCart();
@@ -110,8 +110,8 @@ public class ReletedItemAllAdp extends RecyclerView.Adapter<ReletedItemAllAdp.Vi
                     myCart.setQty("1");
                     myCart.setDiscount(datum.getmDiscount());
                     Log.e("INsert", "--> " + helper.insertData(myCart));
-                    holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.bg_red_shape));
-                    holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_minus_rounded));
+                    holder.lvlCardbg.setBackground(mContext.getResources().getDrawable(R.drawable.cart_back_remove));
+                    holder.imgCard.setImageDrawable(mContext.getDrawable(R.drawable.ic_baseline_remove_shopping_cart_24));
                 }
             }
         });

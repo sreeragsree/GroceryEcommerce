@@ -79,6 +79,7 @@ public class ItemDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
+
         ButterKnife.bind(this);
         sessionManager = new SessionManager(this);
         databaseHelper = new DatabaseHelper(ItemDetailsActivity.this);
