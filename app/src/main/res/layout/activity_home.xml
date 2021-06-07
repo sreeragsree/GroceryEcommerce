@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    tools:openDrawer="start"
     >
     <include
         layout="@layout/app_bar_home"
@@ -33,18 +34,20 @@
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    android:background="@drawable/rounded_greenhome">
+                    >
 
 
                     <include layout="@layout/nav_header_home" />
 
                     <ImageView
+                        android:layout_margin="5dp"
                         android:id="@+id/img_close"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:padding="5dp"
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="5dp"
+                        android:tint="@color/buttongold"
                         android:src="@drawable/close" />
                 </RelativeLayout>
 
@@ -67,6 +70,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
+                            android:tint="@color/buttongold"
                             android:src="@drawable/ic_home"
                             />
 
@@ -95,6 +99,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="7dp"
+                            android:tint="@color/buttongold"
                             android:src="@drawable/ic_myorder" />
 
                         <TextView
@@ -121,6 +126,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
+                            android:tint="@color/buttongold"
                             android:src="@drawable/ic_address" />
 
                         <TextView
@@ -146,6 +152,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
+                            android:tint="@color/buttongold"
                             android:src="@drawable/ic_profile"
                             android:text="Home" />
 
@@ -172,6 +179,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="8dp"
+                            android:tint="@color/buttongold"
                             android:src="@drawable/ic_feedback" />
 
                         <TextView
@@ -198,6 +206,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
+                            android:tint="@color/buttongold"
                             android:src="@drawable/ic_contact"
                             android:text="Home" />
 
@@ -225,6 +234,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
+                            android:tint="@color/buttongold"
                             android:src="@drawable/ic_share"
                              />
 
@@ -251,6 +261,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="10dp"
+                            android:tint="@color/buttongold"
                             android:src="@drawable/ic_logout" />
 
                         <TextView

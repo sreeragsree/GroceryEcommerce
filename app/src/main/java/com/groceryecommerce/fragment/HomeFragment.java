@@ -2,6 +2,7 @@ package com.groceryecommerce.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -84,6 +85,10 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
     RecyclerView recyclerReleted;
     @BindView(R.id.lvl_selected)
     LinearLayout lvlSelected;
+
+    @BindView(R.id.iv_promo)
+    ImageView ivpromo;
+
     Unbinder unbinder;
     private Context mContext;
     CategoryAdp adapter;
@@ -116,6 +121,8 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
         bannerDatumList = new ArrayList<>();
         sessionManager = new SessionManager(mContext);
         homeListFragment = this;
+
+        Glide.with(getContext()).load(R.drawable.promo_ban).into(ivpromo);
 
         // to set category linear horizontal
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);

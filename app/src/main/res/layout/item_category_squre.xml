@@ -13,13 +13,13 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="75dp"
-            android:layout_height="85dp"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
             android:layout_gravity="center"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="12dp"
-            app1:cardCornerRadius="8dp"
+            app1:cardCornerRadius="5dp"
             app1:cardElevation="6dp">
 
 
@@ -27,8 +27,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:id="@+id/imageView"
-                android:layout_width="55dp"
-                android:layout_height="55dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:background="?android:attr/selectableItemBackground"
                 android:padding="5dp"

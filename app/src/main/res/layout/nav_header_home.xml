@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/rounded_green"
+    android:background="@drawable/nav_head_grape"
     android:gravity="center"
     android:orientation="horizontal"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -18,7 +18,7 @@
         android:gravity="center"
         android:textSize="25dp"
         android:text="m"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/buttongold"
         android:textAllCaps="true"
         android:background="@drawable/circale_card"
         />
@@ -38,7 +38,7 @@
             android:gravity="center|left"
             android:text=""
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorBalck"
+            android:textColor="@color/buttongold"
             android:fontFamily="@font/coresans_cr_extrabold"
             android:textSize="18dp"
             android:textStyle="bold" />
@@ -50,7 +50,7 @@
             android:gravity="center|left"
             android:text=""
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/colorBalck"
+            android:textColor="@color/buttongold"
             android:fontFamily="@font/coresans_cr_extrabold"
             android:textSize="16dp"
             />
@@ -62,7 +62,7 @@
             android:textSize="12dp"
             android:padding="2dp"
             android:text=""
-            android:textColor="@color/colorBalck" />
+            android:textColor="@color/buttongold" />
 
     </LinearLayout>
 </LinearLayout>

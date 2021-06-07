@@ -75,6 +75,7 @@ public class CategoryFragment extends Fragment implements CategoryInnerAdapter.R
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_category, container, false);
         unbinder = ButterKnife.bind(this, view);
         categoryList = new ArrayList<>();

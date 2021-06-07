@@ -14,6 +14,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -79,7 +80,7 @@ public class ItemAdp extends RecyclerView.Adapter<ItemAdp.ViewHolder> {
         });
         if (datum.getmDiscount() > 0) {
             holder.lvlOffer.setVisibility(View.VISIBLE);
-            holder.txtOffer.setText(datum.getmDiscount() + "% Off");
+            holder.txtOffer.setText(datum.getmDiscount() + " %\n Off");
         } else {
             holder.lvlOffer.setVisibility(View.GONE);
         }
@@ -128,7 +129,7 @@ public class ItemAdp extends RecyclerView.Adapter<ItemAdp.ViewHolder> {
         @BindView(R.id.lvl_subitem)
         LinearLayout lvlSubitem;
         @BindView(R.id.lvl_offer)
-        LinearLayout lvlOffer;
+        RelativeLayout lvlOffer;
         @BindView(R.id.lvl_outofstock)
         LinearLayout lvlOutofstock;
         @BindView(R.id.spinner)
@@ -156,12 +157,15 @@ public class ItemAdp extends RecyclerView.Adapter<ItemAdp.ViewHolder> {
         final int[] count = {0};
         DatabaseHelper helper = new DatabaseHelper(lnrView.getContext());
         LayoutInflater inflater = LayoutInflater.from(mContext);
-        View view = inflater.inflate(R.layout.custome_prize, null);
+
+        View view = inflater.inflate(R.layout.addto_cartgreen, null);
+
         TextView txtcount = view.findViewById(R.id.txtcount);
         LinearLayout lvl_addremove = view.findViewById(R.id.lvl_addremove);
         LinearLayout lvl_addcart = view.findViewById(R.id.lvl_addcart);
         LinearLayout img_mins = view.findViewById(R.id.img_mins);
         LinearLayout img_plus = view.findViewById(R.id.img_plus);
+
         MyCart myCart = new MyCart();
         myCart.setPid(datum.getId());
         myCart.setImage(datum.getProductImage());
