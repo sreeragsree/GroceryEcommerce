@@ -6,15 +6,15 @@
     android:background="@color/colorWhite"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        >
 
         <RelativeLayout
             android:background="@color/colorWhite"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="320dp"
             android:layout_weight="1.6">
 
             <RelativeLayout
@@ -25,13 +25,12 @@
                 android:layout_weight="1">
 
 
-
                 <androidx.viewpager.widget.ViewPager
                     android:elevation="5dp"
                     android:layout_centerInParent="true"
                     android:id="@+id/viewPager"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp" />
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabview"
@@ -108,73 +107,144 @@
         </RelativeLayout>
 
         <ScrollView
+            android:layout_marginTop="320dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:fillViewport="true">
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorWhite"
+                android:background="@drawable/pro_detail_down"
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:paddingTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/txt_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:padding="5dp"
-                        android:text="Product Name"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:textSize="18dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txt_seler"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:padding="5dp"
-                        android:text="Seller name"
-                        android:textColor="@color/colorBalck"
-                        android:textSize="12dp" />
-
                     <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <TextView
-                            android:id="@+id/txt_price"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="5dp"
-                            android:padding="2dp"
-                            android:text="₹,1500"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="23sp"
-                            android:textStyle="bold" />
+
+                      <LinearLayout
+                          android:orientation="vertical"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content">
+
+                          <TextView
+                              android:id="@+id/txt_title"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:gravity="center_vertical"
+                              android:padding="5dp"
+                              android:text="Product Name"
+                              android:textColor="@color/colorBalck"
+                              android:textSize="22sp"
+                              android:textStyle="bold" />
+
+                          <TextView
+                              android:id="@+id/txt_seler"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:gravity="center_vertical"
+                              android:padding="5dp"
+                              android:text="Seller name"
+                              android:textColor="@color/colorBalck"
+                              android:textSize="12dp" />
+
+                      </LinearLayout>
+
+                        <LinearLayout
+                            android:gravity="end"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_marginRight="15sp"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:gravity="center"
+                                android:id="@+id/txt_price"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="5dp"
+                                android:padding="2dp"
+                                android:text="₹,1500"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="23sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_marginRight="25dp"
+                                android:id="@+id/txt_item_offer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="2dp"
+                                android:padding="2dp"
+                                android:text="₹ 2,999"
+                                android:textColor="@color/colorBalck"
+                                android:textSize="15sp"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+                    <View
+                        android:visibility="gone"
+                        android:background="@color/colorPrimaryDark"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"/>
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp">
+
 
                         <TextView
-                            android:id="@+id/txt_item_offer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="2dp"
-                            android:padding="2dp"
-                            android:text="₹ 2,999"
+                            android:gravity="center_vertical"
+                            android:padding="5dp"
+                            android:text="Select varient"
                             android:textColor="@color/colorBalck"
-                            android:textSize="15sp"
+                            android:textSize="14dp"
                             android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:background="@drawable/rounded_area"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <Spinner
+                                android:id="@+id/spinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:prompt="@string/spn_sel_varient" />
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
                     <TextView
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
@@ -192,7 +262,7 @@
                         android:gravity="center_vertical"
                         android:padding="5dp"
                         android:text="product description is here"
-                        android:textSize="12dp" />
+                        android:textSize="15sp" />
 
 
 
@@ -202,64 +272,139 @@
                         android:gravity="center|left"
                         android:orientation="horizontal">
 
-                        <LinearLayout
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:background="@drawable/rounded_area"
-                            >
+<!--                        <LinearLayout-->
+<!--                            android:layout_width="150dp"-->
+<!--                            android:layout_height="match_parent"-->
+<!--                            android:background="@drawable/rounded_area"-->
+<!--                            >-->
 
-                            <Spinner
-                                android:id="@+id/spinner"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:prompt="@string/spn_sel_varient" />
+<!--                            <Spinner-->
+<!--                                android:id="@+id/spinner"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:prompt="@string/spn_sel_varient" />-->
 
-                        </LinearLayout>
+<!--                        </LinearLayout>-->
 
-                        <LinearLayout
-                            android:id="@+id/lvl_pricelist"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="right"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="1"
-                            android:gravity="right"
-                            android:orientation="vertical"
-                            android:padding="5dp" />
+<!--                        <LinearLayout-->
+<!--                            android:id="@+id/lvl_pricelist"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_gravity="right"-->
+<!--                            android:layout_marginRight="10dp"-->
+<!--                            android:layout_weight="1"-->
+<!--                            android:gravity="right"-->
+<!--                            android:orientation="vertical"-->
+<!--                            android:padding="5dp" />-->
 
                     </LinearLayout>
+
+
+
+
+
+
+
+
                 </LinearLayout>
 
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="center|bottom"
                     android:orientation="vertical"
                     android:visibility="visible">
 
-                    <TextView
-                        android:id="@+id/btn_addtocart"
+<!--                    <LinearLayout-->
+<!--                        android:layout_margin="5dp"-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="50dp">-->
+
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:gravity="center_vertical"-->
+<!--                            android:padding="5dp"-->
+<!--                            android:text="Select varient"-->
+<!--                            android:textColor="@color/colorBalck"-->
+<!--                            android:textSize="14dp"-->
+<!--                            android:textStyle="bold" />-->
+
+<!--                        <LinearLayout-->
+<!--                            android:layout_gravity="center_horizontal"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            >-->
+
+<!--                            <Spinner-->
+<!--                                android:id="@+id/spinner"-->
+<!--                                android:layout_width="match_parent"-->
+<!--                                android:layout_height="match_parent"-->
+<!--                                android:prompt="@string/spn_sel_varient" />-->
+
+<!--                        </LinearLayout>-->
+
+
+<!--                    </LinearLayout>-->
+
+                    <LinearLayout
+                        android:weightSum="2"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="25dp"
-                        android:layout_marginBottom="10dp"
-                        android:background="@drawable/rounded_green"
-                        android:text="Continue Shopping"
-                        android:textAllCaps="false"
-                        android:gravity="center"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="18dp" />
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_weight="1"
+                            android:id="@+id/lvl_pricelist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:layout_marginRight="10dp"
+                            android:gravity="left"
+                            android:orientation="vertical"
+                            android:padding="5dp" />
+
+                        <TextView
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:drawablePadding="5dp"
+                            android:drawableTint="@color/buttongold"
+                            android:drawableRight="@drawable/ic_baseline_arrow_forward_24"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:id="@+id/btn_addtocart"
+                            android:layout_width="wrap_content"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_gravity="end"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/detail_add_to_cart"
+                            android:text="Continue Shopping"
+                            android:textAllCaps="false"
+                            android:gravity="center"
+                            android:textColor="@color/buttongold"
+                            android:textSize="16sp" />
+
+
+
+                    </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="10dp" />
+                </RelativeLayout>
 
 
-                </LinearLayout>
             </LinearLayout>
+
+
         </ScrollView>
-    </LinearLayout>
+
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </LinearLayout>
