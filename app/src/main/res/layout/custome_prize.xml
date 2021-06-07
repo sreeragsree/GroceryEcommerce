@@ -19,7 +19,7 @@
             android:layout_gravity="center"
 
             android:layout_marginLeft="1dp"
-            android:background="@drawable/rounded_add"
+            android:background="@drawable/rounded_area"
             android:gravity="center|left"
             android:orientation="horizontal"
             android:visibility="visible">
@@ -28,7 +28,7 @@
                 android:id="@+id/img_mins"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:background="@drawable/rounded_area"
                 android:layout_margin="3dp"
                 android:layout_gravity="center"
                 android:gravity="center">
@@ -57,7 +57,7 @@
                 android:id="@+id/img_plus"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:background="@drawable/rounded_area"
                 android:layout_gravity="center"
                 android:layout_margin="3dp"
 

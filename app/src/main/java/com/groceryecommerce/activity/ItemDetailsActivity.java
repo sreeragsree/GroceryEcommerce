@@ -90,10 +90,12 @@ public class ItemDetailsActivity extends AppCompatActivity {
             txtDesc.setText("" + productItem.getShortDesc());
             txtSeler.setText("" + productItem.getSellerName());
             List<String> Arealist = new ArrayList<>();
+
             for (int i = 0; i < priceslist.size(); i++) {
                 Arealist.add(priceslist.get(i).getProductType());
             }
             ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this, R.layout.spinner_layout, Arealist);
+            dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(dataAdapter);
             updateItem();
         }
@@ -163,12 +165,16 @@ public class ItemDetailsActivity extends AppCompatActivity {
         final int[] count = {0};
         DatabaseHelper helper = new DatabaseHelper(lnrView.getContext());
         LayoutInflater inflater = LayoutInflater.from(this);
+
         View view = inflater.inflate(R.layout.custome_additem, null);
+
         TextView txtcount = view.findViewById(R.id.txtcount);
+
         LinearLayout lvl_addremove = view.findViewById(R.id.lvl_addremove);
         LinearLayout lvl_addcart = view.findViewById(R.id.lvl_addcart);
         LinearLayout img_mins = view.findViewById(R.id.img_mins);
         LinearLayout img_plus = view.findViewById(R.id.img_plus);
+
         MyCart myCart = new MyCart();
         myCart.setPid(datum.getId());
         myCart.setImage(datum.getProductImage());

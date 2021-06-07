@@ -15,7 +15,7 @@
 
         android:layout_marginLeft="2dp"
         android:layout_weight="2"
-        android:background="@drawable/rounded_add"
+        android:background="@drawable/rounded_area"
         android:gravity="center|left"
         android:orientation="horizontal"
         android:visibility="gone">
@@ -32,7 +32,6 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:padding="5dp"
                 android:src="@drawable/ic_remove" />
         </LinearLayout>
@@ -74,18 +73,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:background="@drawable/rounded_add"
+        android:background="@drawable/rounded_area"
 
         android:visibility="visible">
 
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:gravity="center"
             android:padding="3dp"
-            android:text="Add"
-            android:textColor="@color/colorPrimary" />
+            android:drawableTint="@color/colorPrimaryDark"
+            android:drawableRight="@drawable/ic_baseline_add_shopping_cart_24"
+            android:text="Add to cart"
+            android:textColor="@color/colorPrimaryDark" />
     </LinearLayout>
 
 </LinearLayout>

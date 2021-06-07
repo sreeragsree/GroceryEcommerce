@@ -21,5 +21,11 @@
     <color name="mildbackground">#EAEEF1</color>
     <color name="mildRed">#FB5B6D</color>
     <color name="mildyellow">#ffba60</color>
+    <color name="buttongrape">#3f3a57</color>
+    <color name="buttongold">#d3aa5b</color>
+    <color name="backgrey">#f1f1f1</color>
+    <color name="progradient1">#dadde4</color>
+    <color name="progradient2">#f5f6fa</color>
+    <color name="back">#e5e5e5</color>
 
 </resources>

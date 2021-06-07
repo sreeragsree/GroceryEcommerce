@@ -11,14 +11,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.bumptech.glide.Glide;
+import com.groceryecommerce.adepter.BannerAdapter;
 import com.groceryecommerce.model.BannerItem;
 import com.groceryecommerce.model.DynamicData;
 import com.groceryecommerce.model.Home;
@@ -46,6 +50,8 @@ import org.json.JSONObject;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -69,7 +75,7 @@ import static com.groceryecommerce.utils.Utiles.productItems;
 
 public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchListener, ReletedItemAdp.ItemClickListener, GetResult.MyListener, ReletedItemDaynamicAdp.ItemClickListener {
     @BindView(R.id.viewPager)
-    AutoScrollViewPager viewPager;
+    RecyclerView viewPager;
     @BindView(R.id.tabview)
     TabLayout tabview;
     @BindView(R.id.recycler_view)
@@ -83,10 +89,15 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
     CategoryAdp adapter;
     ReletedItemAdp adapterReletedi;
     List<CatItem> categoryList;
+    BannerAdapter myCustomPagerAdapter;
     List<BannerItem> bannerDatumList;
     public  HomeFragment homeListFragment;
     SessionManager sessionManager;
     User user;
+    int position;
+    Timer timer;
+    TimerTask timerTask;
+    LinearLayoutManager layoutManager;
     List<DynamicData> dynamicDataList = new ArrayList<>();
     ReletedItemAdp reletedItemAdp;
 
@@ -111,6 +122,10 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
 
+        layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        viewPager.setLayoutManager(layoutManager);
+        setbanner();
+
         LinearLayoutManager mLayoutManager1 = new LinearLayoutManager(mContext);
         mLayoutManager1.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerReleted.setLayoutManager(mLayoutManager1);
@@ -130,6 +145,67 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
 
         getHome();
         return view;
+    }
+
+    private void stopAutoScrollBanner() {
+        if (timer != null && timerTask != null) {
+            timerTask.cancel();
+            timer.cancel();
+            timer = null;
+            timerTask = null;
+            position = layoutManager.findFirstCompletelyVisibleItemPosition();
+        }
+    }
+
+    private void runAutoScrollBanner() {
+        if (timer == null && timerTask == null) {
+            timer = new Timer();
+            timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    try {
+                        if (position == viewPager.getAdapter().getItemCount() - 1) {
+                            position = 0;
+                            viewPager.smoothScrollBy(5, 0);
+                            viewPager.smoothScrollToPosition(position);
+                        } else {
+                            position++;
+                            viewPager.smoothScrollToPosition(position);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+
+                }
+
+            };
+            timer.schedule(timerTask, 4000, 4000);
+        }
+
+    }
+
+
+    private void setbanner() {
+        position = 0;
+        viewPager.scrollToPosition(position);
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(viewPager);
+        viewPager.smoothScrollBy(5, 0);
+
+        viewPager.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+
+                if (newState == 1) {
+                    stopAutoScrollBanner();
+                } else if (newState == 0) {
+                    position = layoutManager.findFirstCompletelyVisibleItemPosition();
+                    runAutoScrollBanner();
+                }
+            }
+        });
     }
 
     private void setJoinPlayrList(LinearLayout lnrView, List<DynamicData> dataList) {
@@ -304,17 +380,21 @@ public class HomeFragment extends Fragment implements CategoryAdp.RecyclerTouchL
                 recyclerView.setAdapter(adapter);
 
                 bannerDatumList.addAll(home.getResultHome().getBannerItems());
+
+                myCustomPagerAdapter = new BannerAdapter(getActivity(), bannerDatumList);
+                viewPager.setAdapter(myCustomPagerAdapter);
+
 //                for (BannerItem bannerItem : bannerDatumList)
 //                {
 //                   Log.d("BannerTest","test"+bannerItem.getBimg()+bannerItem.getId()+bannerItem.getCid());
 //                }
-                MyCustomPagerAdapter myCustomPagerAdapter = new MyCustomPagerAdapter(mContext, bannerDatumList);
-                viewPager.setAdapter(myCustomPagerAdapter);
-                viewPager.startAutoScroll();
-                viewPager.setInterval(3000);
-                viewPager.setCycle(true);
-                viewPager.setStopScrollWhenTouch(true);
-                tabview.setupWithViewPager(viewPager, true);
+//                MyCustomPagerAdapter myCustomPagerAdapter = new MyCustomPagerAdapter(mContext, bannerDatumList);
+//                viewPager.setAdapter(myCustomPagerAdapter);
+//                viewPager.startAutoScroll();
+//                viewPager.setInterval(3000);
+//                viewPager.setCycle(true);
+//                viewPager.setStopScrollWhenTouch(true);
+//                tabview.setupWithViewPager(viewPager, true);
 
                 reletedItemAdp = new ReletedItemAdp(mContext, home.getResultHome().getProductItems(), this);
                 recyclerReleted.setAdapter(reletedItemAdp);

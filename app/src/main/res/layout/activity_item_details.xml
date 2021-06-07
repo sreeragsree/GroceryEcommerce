@@ -12,23 +12,30 @@
         android:orientation="vertical">
 
         <RelativeLayout
+            android:background="@color/colorWhite"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.6">
 
             <RelativeLayout
+                android:padding="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1">
 
+
+
                 <androidx.viewpager.widget.ViewPager
+                    android:elevation="5dp"
+                    android:layout_centerInParent="true"
                     android:id="@+id/viewPager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_width="200dp"
+                    android:layout_height="200dp" />
 
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tabview"
+                    android:layout_gravity="center|bottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -36,6 +43,9 @@
 
                     app:tabBackground="@drawable/tab_selector"
                     app:tabIndicatorHeight="0dp" />
+
+
+
             </RelativeLayout>
 
             <ImageView
@@ -44,8 +54,8 @@
                 android:layout_height="40dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/circale_green"
                 android:padding="10dp"
+                android:tint="@color/colorPrimaryDark"
                 android:src="@drawable/left" />
 
             <LinearLayout
@@ -66,7 +76,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:background="@drawable/circale_green"
                         android:padding="10dp">
 
 
@@ -75,6 +84,7 @@
                             android:layout_width="25dp"
                             android:layout_height="25dp"
                             android:layout_gravity="center"
+                            android:tint="@color/colorPrimaryDark"
                             android:src="@drawable/ic_cart" />
 
 
@@ -106,7 +116,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/product_gray"
+                android:background="@color/colorWhite"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -121,8 +131,8 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:padding="5dp"
-                        android:text=""
-                        android:textColor="@color/colorBalck"
+                        android:text="Product Name"
+                        android:textColor="@color/colorPrimaryDark"
                         android:textSize="18dp"
                         android:textStyle="bold" />
 
@@ -132,28 +142,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:padding="5dp"
-                        android:text=""
-                        android:textColor="@color/colorBalck"
-                        android:textSize="12dp" />
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:padding="5dp"
-                        android:text="Description"
-                        android:textColor="@color/colorBalck"
-                        android:textSize="14dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txt_desc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:padding="5dp"
-                        android:text=""
+                        android:text="Seller name"
                         android:textColor="@color/colorBalck"
                         android:textSize="12dp" />
 
@@ -167,9 +156,9 @@
                             android:layout_height="wrap_content"
                             android:layout_marginRight="5dp"
                             android:padding="2dp"
-                            android:text=""
+                            android:text="₹,1500"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="14sp"
+                            android:textSize="23sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -178,11 +167,34 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="2dp"
                             android:padding="2dp"
-                            android:text=""
+                            android:text="₹ 2,999"
                             android:textColor="@color/colorBalck"
-                            android:textSize="12sp"
+                            android:textSize="15sp"
                             android:textStyle="bold" />
+
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="5dp"
+                        android:text="Description"
+                        android:textColor="@color/colorBalck"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:justificationMode="inter_word"
+                        android:id="@+id/txt_desc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="5dp"
+                        android:text="product description is here"
+                        android:textSize="12dp" />
+
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -191,18 +203,17 @@
                         android:orientation="horizontal">
 
                         <LinearLayout
-
-                            android:layout_width="110dp"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="5dp"
-                            android:background="@drawable/rounded_gray"
-                            android:padding="3dp">
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/rounded_area"
+                            >
 
                             <Spinner
                                 android:id="@+id/spinner"
-                                android:layout_width="fill_parent"
-                                android:layout_height="25dp"
-                                android:prompt="@string/spinner_title" />
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:prompt="@string/spn_sel_varient" />
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -245,6 +256,8 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="10dp" />
+
+
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>

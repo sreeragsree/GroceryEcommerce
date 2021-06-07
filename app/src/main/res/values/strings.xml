@@ -7,6 +7,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="spinner_title">Select Area</string>
+    <string name="spn_sel_varient">Select Varient</string>
 
     <string name="pic_myslf">Pickup Myself</string>
     <!-- TODO: Remove or change this placeholder text -->
