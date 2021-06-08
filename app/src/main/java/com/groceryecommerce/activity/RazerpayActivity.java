@@ -40,6 +40,7 @@ public class RazerpayActivity extends AppCompatActivity implements PaymentResult
     public void startPayment(String amount) {
         final Activity activity = this;
         final Checkout co = new Checkout();
+        co.setKeyID(paymentItem.getCredValue());
         try {
             JSONObject options = new JSONObject();
             options.put("name", getResources().getString(R.string.app_name));

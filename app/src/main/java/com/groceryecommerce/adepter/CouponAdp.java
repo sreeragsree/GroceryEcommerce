@@ -9,6 +9,7 @@ import android.text.Spanned;
 import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,8 +84,8 @@ public class CouponAdp extends RecyclerView.Adapter<CouponAdp.MyViewHolder> {
     public void onBindViewHolder(final MyViewHolder holder, int position) {
 
         Couponlist coupon = couponlists.get(position);
-        Glide.with(mContext).load(APIClient.baseUrl + "/" + coupon.getCImg()).thumbnail(Glide.with(mContext).load(R.drawable.ezgifresize)).into(holder.imgCode);
-
+        Glide.with(mContext).load(APIClient.baseUrl  + coupon.getCImg()).thumbnail(Glide.with(mContext).load(R.drawable.ezgifresize)).into(holder.imgCode);
+        Log.d("%%%", String.valueOf(amount)+coupon.getMinAmt());
         if (amount < coupon.getMinAmt()) {
             holder.txtApply.setTextColor(mContext.getResources().getColor(R.color.colorGrey1));
             holder.txtApply.setEnabled(false);
