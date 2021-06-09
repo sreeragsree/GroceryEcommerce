@@ -62,11 +62,13 @@ public class MyOrderFragment extends Fragment implements GetResult.MyListener {
     List<OrderDatum> orderData;
     CustPrograssbar custPrograssbar;
     int positionOrd;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_my_order, container, false);
+
         custPrograssbar = new CustPrograssbar();
         sessionManager = new SessionManager(getActivity());
         user = sessionManager.getUserDetails("");
@@ -141,15 +143,17 @@ public class MyOrderFragment extends Fragment implements GetResult.MyListener {
             for (int i = 0; i < orderData.size(); i++) {
                 LayoutInflater inflater = LayoutInflater.from(getActivity());
                 a = a + 1;
+
                 View view = inflater.inflate(R.layout.custome_oder, null);
+
                 TextView txt_orderid = view.findViewById(R.id.txt_orderid);
                 TextView txt_info = view.findViewById(R.id.txt_info);
                 TextView txt_ordcancel = view.findViewById(R.id.txt_ordcancel);
                 LinearLayout lvl_cancel = view.findViewById(R.id.lvl_cancel);
                 TextView txt_status = view.findViewById(R.id.txt_status);
                 TextView txt_total = view.findViewById(R.id.txt_total);
-                txt_orderid.setText("Order ID:" + orderData.get(i).getId());
-                txt_total.setText(sessionManager.getStringData(currncy) + orderData.get(i).getTotalamt());
+                txt_orderid.setText("Order ID:" + orderData.get(i).getOid());
+                txt_total.setText(sessionManager.getStringData(currncy) +" "+ orderData.get(i).getTotalamt());
                 if (orderData.get(i).getStatus().equalsIgnoreCase("completed")) {
                     txt_status.setTextColor(getResources().getColor(R.color.colorPrimary));
                 }

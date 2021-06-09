@@ -27,61 +27,16 @@
                 android:layout_height="?attr/actionBarSize"
                 app:popupTheme="@style/AppTheme.PopupOverlay">
 
-                <LinearLayout
+                <RelativeLayout
+                    android:paddingTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <TextView
-                            android:id="@+id/txt_actiontitle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="1"
-                            android:gravity="center|left"
-                            android:maxLength="12"
-                            android:padding="5dp"
-                            android:text="BUTCHERY"
-                            android:textColor="@color/colorBalck"
-                            android:textSize="18dp"
-                            android:textStyle="bold" />
-
-<!--                       <LinearLayout-->
-<!--                           android:layout_width="match_parent"-->
-<!--                           android:layout_height="wrap_content">-->
-
-<!--                           <ImageView-->
-<!--                               android:alpha=".7"-->
-<!--                               android:tint="@color/colorPrimaryDark"-->
-<!--                               android:src="@drawable/ic_baseline_location_on_24"-->
-<!--                               android:layout_width="18dp"-->
-<!--                               android:layout_height="18dp"/>-->
-
-<!--                           <TextView-->
-<!--                               android:layout_width="match_parent"-->
-<!--                               android:layout_height="wrap_content"-->
-<!--                               android:layout_gravity="center"-->
-<!--                               android:layout_weight="1"-->
-<!--                               android:gravity="center|left"-->
-<!--                               android:padding="5dp"-->
-<!--                               android:text="choose location"-->
-<!--                               android:textColor="@color/colorBalck"-->
-<!--                               />-->
-
-<!--                       </LinearLayout>-->
-
-                    </LinearLayout>
-
-
-
                     <RelativeLayout
+                        android:layout_marginRight="50dp"
+                        android:layout_alignParentEnd="true"
                         android:id="@+id/rlt_noti"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="4"
@@ -114,8 +69,10 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:layout_marginRight="10dp"
+                        android:layout_alignParentEnd="true"
                         android:id="@+id/rlt_cart"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_weight="4"
@@ -144,18 +101,61 @@
                             android:textSize="10dp"
                             android:textStyle="bold" />
                     </RelativeLayout>
-                </LinearLayout>
+
+
+                </RelativeLayout>
+
             </androidx.appcompat.widget.Toolbar>
 
             <LinearLayout
+                android:paddingLeft="10dp"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:maxLength="12"
+                    android:padding="5dp"
+                    android:text="Welcome"
+                    android:fontFamily="@font/nunito_semi_bold"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txt_actiontitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:fontFamily="@font/nunito_black"
+                    android:maxLength="12"
+                    android:padding="5dp"
+                    android:text="BUTCHERY"
+                    android:textColor="@color/colorBalck"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
                 android:id="@+id/lvl_actionsearch"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/rounded_area"
-                android:elevation="10dp"
+                android:background="@drawable/search_back"
                 android:gravity="center|right"
                 android:orientation="horizontal">
 

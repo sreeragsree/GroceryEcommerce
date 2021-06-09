@@ -36,11 +36,10 @@
 
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/img_code"
-                        android:layout_width="42dp"
-                        android:layout_height="42dp"
-                        android:padding="3dp"
-
-                        android:src="@mipmap/ic_launcher" />
+                        android:layout_margin="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_coupon" />
 
                     <View
                         android:layout_width="1dp"
@@ -72,9 +71,9 @@
                         android:layout_height="30dp"
                         android:gravity="center"
                         android:padding="2dp"
-                        android:background="@drawable/rounded_green2"
+                        android:background="@drawable/grape_button"
                         android:text="$ 100"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/buttongold"
                         android:textSize="14dp"
                         android:textStyle="bold" />
                 </LinearLayout>

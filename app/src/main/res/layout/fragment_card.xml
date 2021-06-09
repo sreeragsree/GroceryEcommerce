@@ -27,12 +27,14 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone"
+            >
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/image" />
+                android:id="@+id/img_empty"
+                android:layout_width="300dp"
+                android:layout_height="250dp"
+                 />
 
             <TextView
                 android:id="@+id/txt_notfound"
@@ -70,14 +72,14 @@
                 android:layout_alignParentLeft="true"
                 android:padding="10dp"
                 android:text="Total Item"
-                android:textColor="@color/colorBalck"
+                android:textColor="@color/buttongold"
                 android:textSize="16dp"
                 android:textStyle="bold" />
 
             <View
                 android:layout_width="1dp"
                 android:layout_height="20dp"
-                android:background="@color/colorBalck" />
+                android:background="@color/buttongold" />
 
             <TextView
                 android:id="@+id/totleAmount"
@@ -86,7 +88,7 @@
                 android:layout_alignParentRight="true"
                 android:padding="10dp"
                 android:text="Totals :  "
-                android:textColor="@color/colorBalck"
+                android:textColor="@color/buttongold"
                 android:textSize="16dp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -107,14 +109,16 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:backgroundTint="@color/buttongold"
                     android:background="@drawable/rounded_add"
+                    android:drawableTint="@color/colorWhite"
                     android:drawableRight="@drawable/ic_rightwhite"
                     android:drawablePadding="1dp"
                     android:fontFamily="@font/coresans_cr_medium"
                     android:gravity="center"
                     android:padding="5dp"
                     android:text="Order"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/colorWhite"
                     android:textSize="16dp"
                     android:textStyle="bold" />
             </LinearLayout>

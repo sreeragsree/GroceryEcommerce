@@ -92,8 +92,7 @@ public class AddressFragment extends Fragment implements GetResult.MyListener {
         startActivity(new Intent(getActivity(), AddressActivity.class));
     }
 
-    public class SelectAdrsAdapter extends
-            RecyclerView.Adapter<SelectAdrsAdapter.ViewHolder> {
+    public class SelectAdrsAdapter extends RecyclerView.Adapter<SelectAdrsAdapter.ViewHolder> {
         private List<Address> addressList;
 
         private int lastSelectedPosition = -1;

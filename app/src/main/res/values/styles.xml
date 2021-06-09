@@ -3,23 +3,29 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="fontFamily">@font/coresans_cr_regular</item>
+        <item name="fontFamily">@font/nunito_semi_bold</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <style name="AppTheme2" parent="Theme.AppCompat.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="fontFamily">@font/coresans_cr_regular</item>
+        <item name="fontFamily">@font/nunito_semi_bold</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="SearchView" parent="">
+        <item name="android:editTextColor">@color/dark_late_gray</item>
+        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="android:textSize">16sp</item>
+        <item name="tint">@android:color/black</item>
+    </style>
 
 
     <style name="AppTheme.NoActionBar">
-        <item name="fontFamily">@font/coresans_cr_regular</item>
+        <item name="fontFamily">@font/nunito_semi_bold</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

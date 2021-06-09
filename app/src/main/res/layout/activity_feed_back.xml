@@ -15,14 +15,14 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="10dp"
             app:cardCornerRadius="10dp"
             app:cardElevation="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:orientation="vertical">
 
@@ -30,10 +30,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:textSize="18dp"
                     android:padding="10dp"
+                    android:textSize="15sp"
                     android:textColor="@color/colorBalck"
                     android:text="Please take a minute to write a review" />
+
+
                 <RatingBar
                     android:id="@+id/ratingBar"
                     android:layout_width="wrap_content"
@@ -43,6 +45,7 @@
                     android:theme="@style/customRatingBar"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -60,21 +63,33 @@
                         android:padding="5dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="25sp"/>
+
+                <TextView
+                    android:id="@+id/btn_submit"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:gravity="center"
+                    android:layout_marginBottom="22dp"
+                    android:background="@drawable/detail_add_to_cart"
+                    android:padding="5dp"
+                    android:textSize="21dp"
+                    android:layout_gravity="center"
+                    android:text="Post a Review"
+                    android:elevation="5dp"
+                    android:textColor="@color/buttongold" />
+
+
 
             </LinearLayout>
-            <TextView
-                android:id="@+id/btn_submit"
-                android:layout_width="150dp"
-                android:layout_height="48dp"
-                android:layout_marginBottom="22dp"
-                android:background="@drawable/rounded_green2"
-                android:padding="5dp"
-                android:gravity="center"
-                android:textSize="21dp"
-                android:layout_gravity="bottom|center"
-                android:text="Submit"
-                android:elevation="5dp"
-                android:textColor="@color/colorWhite" />
+
+
+
+
         </androidx.cardview.widget.CardView>
 
 

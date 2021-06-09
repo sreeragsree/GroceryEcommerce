@@ -49,10 +49,10 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:paddingLeft="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:layout_marginBottom="2dp"
+
                     android:orientation="horizontal">
 
                     <TextView
@@ -99,6 +99,14 @@
 
 
                 <LinearLayout
+                    android:background="@drawable/home_card_back"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                <LinearLayout
+                    android:paddingLeft="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -257,6 +265,11 @@
 
 
                 </LinearLayout>
+
+                </LinearLayout>
+
+
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

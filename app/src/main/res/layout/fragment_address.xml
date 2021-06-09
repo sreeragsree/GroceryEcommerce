@@ -49,9 +49,9 @@
         android:layout_margin="15dp"
         android:layout_marginLeft="18dp"
         android:layout_marginRight="18dp"
-        android:background="@drawable/rounded_green"
+        android:background="@drawable/grape_button"
         android:gravity="center"
         android:text="Add another address"
-        android:textColor="@color/colorWhite"
-        android:textSize="21dp" />
+        android:textColor="@color/buttongold"
+        android:textSize="18sp" />
 </LinearLayout>

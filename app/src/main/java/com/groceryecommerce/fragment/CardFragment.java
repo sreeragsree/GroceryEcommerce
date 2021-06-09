@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Point;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
@@ -61,6 +62,9 @@ public class CardFragment extends Fragment {
     TextView totleAmount;
     @BindView(R.id.lvlbacket)
     LinearLayout lvlBacket;
+    @BindView(R.id.img_empty)
+    ImageView img_empty;
+
     StaggeredGridLayoutManager gridLayoutManager;
 
     SessionManager sessionManager;
@@ -85,6 +89,7 @@ public class CardFragment extends Fragment {
         Cursor res = databaseHelper.getAllData();
         if (res.getCount() == 0) {
             lvlNotfound.setVisibility(View.VISIBLE);
+            Glide.with(getContext()).load(R.drawable.empty_cart).into(img_empty);
             txtNotfound.setText("Cart Empty");
             lvlBacket.setVisibility(View.GONE);
 
@@ -112,6 +117,7 @@ public class CardFragment extends Fragment {
 
 
     public class ItemAdp extends RecyclerView.Adapter<ItemAdp.ViewHolder> {
+
         final int[] count = {0};
         double[] totalAmount = {0};
         DatabaseHelper helper = new DatabaseHelper(getActivity());
@@ -133,8 +139,10 @@ public class CardFragment extends Fragment {
 
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+
             View view = mInflater.inflate(R.layout.custome_mycard, parent, false);
             return new ViewHolder(view);
+
         }
 
         @Override
@@ -261,7 +269,7 @@ public class CardFragment extends Fragment {
             @BindView(R.id.txt_gram)
             TextView txtGram;
             @BindView(R.id.img_delete)
-            ImageView imgDelete;
+            TextView imgDelete;
             @BindView(R.id.img_mins)
             LinearLayout imgMins;
             @BindView(R.id.txtcount)
@@ -289,6 +297,7 @@ public class CardFragment extends Fragment {
         if (res.getCount() == 0) {
             lvlNotfound.setVisibility(View.VISIBLE);
             txtNotfound.setText("Cart Empty");
+            Glide.with(getContext()).load(R.drawable.empty_cart).into(img_empty);
             lvlBacket.setVisibility(View.GONE);
 
         }

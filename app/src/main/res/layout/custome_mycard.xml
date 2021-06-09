@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:padding="5dp"
                     android:gravity="center"
-                    android:background="@drawable/rounded_gray"
+                    android:background="@drawable/rounded_area"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -73,19 +73,21 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:layout_width="37dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="32dp"
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="3dp"
                     android:layout_marginRight="3dp"
                     android:gravity="center">
 
-                    <ImageView
+                    <TextView
+                        android:textColor="@color/colorRad"
                         android:id="@+id/img_delete"
                         android:layout_width="wrap_content"
                         android:background="?android:attr/selectableItemBackgroundBorderless"
                         android:layout_height="wrap_content"
                         android:padding="2dp"
+                        android:text="Remove"
                         android:src="@drawable/ic_delete" />
                 </LinearLayout>
 
@@ -97,7 +99,7 @@
                     android:layout_gravity="center"
                     android:layout_alignParentBottom="true"
                     android:layout_marginLeft="2dp"
-                    android:background="@drawable/rounded_add"
+                    android:background="@drawable/grape_button"
                     android:gravity="center|left"
                     android:orientation="horizontal"
                     android:visibility="visible">
@@ -112,11 +114,10 @@
                         android:gravity="center">
 
                         <ImageView
-
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
-                            android:src="@drawable/ic_remove" />
+                            android:src="@drawable/ic_remove_gold" />
                     </LinearLayout>
 
                     <TextView
@@ -128,7 +129,7 @@
                         android:gravity="center"
                         android:minWidth="20dp"
                         android:text="0"
-                        android:textColor="@color/colorBalck"
+                        android:textColor="@color/colorWhite"
                         android:textSize="12dp"
                         android:textStyle="bold" />
 
@@ -143,11 +144,10 @@
                         android:gravity="center">
 
                         <ImageView
-
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:padding="5dp"
-                            android:src="@drawable/ic_add" />
+                            android:src="@drawable/ic_add_gold" />
                     </LinearLayout>
                 </LinearLayout>
 

@@ -32,7 +32,7 @@
                         android:id="@+id/ed_username"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_editetext"
+                        android:background="@drawable/rounded_area"
                         android:drawableLeft="@drawable/ic_perm_"
                         android:textColorHint="@color/colorGrey"
                         android:drawablePadding="10dp"
@@ -51,7 +51,7 @@
                         android:id="@+id/ed_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_editetext"
+                        android:background="@drawable/rounded_area"
                         android:drawableLeft="@drawable/ic_email"
                         android:drawablePadding="10dp"
                         android:textColorHint="@color/colorGrey"
@@ -71,7 +71,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="2.2"
-                        android:background="@drawable/rounded_editetext">
+                        android:background="@drawable/rounded_area">
 
                         <Spinner
                             android:id="@+id/spinner"
@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableLeft="@drawable/ic_phone"
-                        android:background="@drawable/rounded_editetext"
+                        android:background="@drawable/rounded_area"
                         android:hint="Mobile"
                         android:inputType="phone"
                         android:padding="12dp"
@@ -108,7 +108,7 @@
                         android:id="@+id/ed_password"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/rounded_editetext"
+                        android:background="@drawable/rounded_area"
                         android:drawableLeft="@drawable/ic_lock"
                         android:drawablePadding="10dp"
                         android:hint="Password"
@@ -131,10 +131,10 @@
                         android:layout_marginTop="30dp"
                         android:layout_marginRight="20dp"
                         android:elevation="10dp"
-                        android:background="@drawable/rounded_green"
+                        android:background="@drawable/detail_add_to_cart"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="Save"
+                        android:text="Save / Update"
                         android:textColor="@color/colorWhite" />
 
                 <View

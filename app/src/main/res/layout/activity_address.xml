@@ -26,7 +26,7 @@
                 android:id="@+id/ed_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/rounded_editetext"
+                android:background="@drawable/rounded_area"
                 android:hint="Name"
                 android:padding="10dp"
                 android:textColor="@color/colorGrey2" />
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_editetext"
+                android:background="@drawable/rounded_area"
                 android:hint="Address Type"
                   android:padding="10dp"
                 android:textColor="@color/colorGrey2" />
@@ -55,7 +55,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1.5"
-                    android:background="@drawable/rounded_editetext"
+                    android:background="@drawable/rounded_area"
                     android:hint="Home No"
                       android:padding="10dp"
                     android:textColor="@color/colorGrey2" />
@@ -68,7 +68,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginTop="15dp"
                     android:layout_weight="1"
-                    android:background="@drawable/rounded_editetext"
+                    android:background="@drawable/rounded_area"
                     android:hint="Society"
                       android:padding="10dp"
                     android:textColor="@color/colorGrey2" />
@@ -85,9 +85,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="5dp"
-                android:background="@drawable/rounded_editetext">
+                android:background="@drawable/rounded_area">
 
                 <Spinner
                     android:id="@+id/spinner"
@@ -101,7 +100,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_editetext"
+                android:background="@drawable/rounded_area"
                 android:hint="Landmark"
                   android:padding="10dp"
                 android:textColor="@color/colorGrey2" />
@@ -112,7 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
-                android:background="@drawable/rounded_editetext"
+                android:background="@drawable/rounded_area"
                 android:hint="Pincode"
                 android:inputType="number"
                 android:maxLength="6"
@@ -137,9 +136,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:background="@drawable/rounded_green"
-                    android:text="Save"
-                    android:textColor="@color/colorWhite"
+                    android:background="@drawable/detail_add_to_cart"
+                    android:text="Save / Update"
+                    android:textColor="@color/buttongold"
                     android:textSize="18dp"
                     android:textStyle="bold" />
             </LinearLayout>
