@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.groceryecommerce.model.SubCategory;
 import com.groceryecommerce.model.SubcatItem;
 import com.groceryecommerce.model.User;
@@ -47,6 +49,8 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
     RecyclerView recyclerView;
     @BindView(R.id.txt_titel)
     TextView txtTitel;
+    @BindView(R.id.iv_nodataf)
+    ImageView ivnodata;
     SubCategoryAdp adapter;
     List<SubcatItem> categoryList;
     Unbinder unbinder;
@@ -141,10 +145,12 @@ public class SubCategoryFragment extends Fragment implements GetResult.MyListene
                         recyclerView.setAdapter(adapter);
                     } else {
                         lvlNotfound.setVisibility(View.VISIBLE);
+                        Glide.with(getContext()).load(R.drawable.no_data).into(ivnodata);
                         txtNotfound.setText("" + category.getResponseMsg());
                     }
                 } else {
                     lvlNotfound.setVisibility(View.VISIBLE);
+                    Glide.with(getContext()).load(R.drawable.no_data).into(ivnodata);
                     txtNotfound.setText("" + category.getResponseMsg());
                 }
 

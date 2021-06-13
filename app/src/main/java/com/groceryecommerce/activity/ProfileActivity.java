@@ -1,6 +1,8 @@
 package com.groceryecommerce.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -8,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.appcompat.widget.Toolbar;
 
 import com.groceryecommerce.model.Contry;
 import com.groceryecommerce.model.User;
@@ -59,11 +63,14 @@ public class ProfileActivity extends BaseActivity implements GetResult.MyListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
         ButterKnife.bind(this);
         sessionManager = new SessionManager(ProfileActivity.this);
         user = sessionManager.getUserDetails("");
         setcountaint(user);
         getCode();
+
+        //getSupportActionBar().setTitle("Profile Name");
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

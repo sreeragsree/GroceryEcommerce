@@ -37,8 +37,8 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="48dp"
-        android:background="@drawable/rzp_green_button"
+        android:background="@drawable/detail_add_to_cart"
         android:text="Next"
         android:textAllCaps="false"
-        android:textColor="@color/colorWhite" />
+        android:textColor="@color/buttongold" />
 </LinearLayout>

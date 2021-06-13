@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.groceryecommerce.model.Address;
 import com.groceryecommerce.model.AddressData;
 import com.groceryecommerce.model.RestResponse;
@@ -54,6 +55,10 @@ public class AddressFragment extends Fragment implements GetResult.MyListener {
     RecyclerView recycleAddress;
     @BindView(R.id.btn_addaddress)
     TextView btnAddaddress;
+
+    @BindView(R.id.img_nodata)
+    ImageView img_nodata;
+
     User user;
     SessionManager sessionManager;
     CustPrograssbar custPrograssbar;
@@ -220,6 +225,7 @@ public class AddressFragment extends Fragment implements GetResult.MyListener {
                     }
                 } else {
                     lvlNotfound.setVisibility(View.VISIBLE);
+                    Glide.with(getContext()).load(R.drawable.no_data).into(img_nodata);
                     txtNotfound.setText("" + addressData.getResponseMsg());
                 }
             } catch (Exception e) {
@@ -234,6 +240,7 @@ public class AddressFragment extends Fragment implements GetResult.MyListener {
                     addressList.remove(positionAdd);
                     if(addressList.size()==0){
                         lvlNotfound.setVisibility(View.VISIBLE);
+                        Glide.with(getContext()).load(R.drawable.no_data).into(img_nodata);
                         txtNotfound.setText("Address Not Found!!");
                     }
                     adapter.notifyDataSetChanged();

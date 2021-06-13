@@ -96,6 +96,10 @@ public class OrderSumrryFragment extends Fragment implements GetResult.MyListene
     ImageView imgCoopncode;
     @BindView(R.id.txt_discount)
     TextView txtDiscount;
+
+    @BindView(R.id.tv_coupon)
+    TextView tv_coupon;
+
     private String time;
     private String data;
     private String payment;
@@ -192,14 +196,15 @@ public class OrderSumrryFragment extends Fragment implements GetResult.MyListene
             txtDelivery.setText(sessionManager.getStringData(CURRUNCY) + selectaddress.getDeliveryCharge());
         }
         if (sessionManager.getIntData(COUPON) != 0) {
-            imgCoopncode.setImageResource(R.drawable.ic_icons_remove_tag);
+            imgCoopncode.setImageResource(R.drawable.ic_baseline_close_24);
+            tv_coupon.setText("Remove Coupon");
         } else {
-            imgCoopncode.setImageResource(R.drawable.ic_righta);
-
+            imgCoopncode.setImageResource(R.drawable.ic_baseline_arrow_forward_24);
+            tv_coupon.setText("View Coupon");
         }
         totalAmount[0] = totalAmount[0] - sessionManager.getIntData(COUPON);
         txtTotal.setText(sessionManager.getStringData(CURRUNCY) + new DecimalFormat("##.##").format(totalAmount[0]));
-        btnCuntinus.setText("Place Order - " + sessionManager.getStringData(CURRUNCY) + new DecimalFormat("##.##").format(totalAmount[0]));
+        btnCuntinus.setText("Place Order  " + sessionManager.getStringData(CURRUNCY) + new DecimalFormat("##.##").format(totalAmount[0]));
         txtDiscount.setText(sessionManager.getStringData(CURRUNCY) + " " + sessionManager.getIntData(COUPON));
 
         total = totalAmount[0];

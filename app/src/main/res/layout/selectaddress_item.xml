@@ -9,6 +9,8 @@
     android:padding="5dp">
 
     <LinearLayout
+        android:padding="5dp"
+        android:background="@drawable/rounded_area"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
@@ -50,7 +52,6 @@
                     android:padding="2dp">
 
                     <ImageView
-                        android:visibility="gone"
                         android:id="@+id/txt_delete"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
@@ -94,9 +95,9 @@
 
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_margin="5dp"
-        android:background="@color/colorGrey" />
+<!--    <View-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="1dp"-->
+<!--        android:layout_margin="5dp"-->
+<!--        android:background="@color/colorGrey" />-->
 </LinearLayout>

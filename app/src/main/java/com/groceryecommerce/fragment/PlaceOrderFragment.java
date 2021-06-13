@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 
 import com.bumptech.glide.Glide;
 import com.groceryecommerce.model.Payment;
@@ -54,6 +55,10 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
     TextView txtSelectdate;
     @BindView(R.id.lvl_paymnet)
     LinearLayout lvlPaymnet;
+
+
+
+
     int day = 1;
     CustPrograssbar custPrograssbar;
     SessionManager sessionManager;
@@ -81,6 +86,10 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_plase_order, container, false);
+
+        // .setLayoutManager(new GridLayoutManager(getActivity(), 3));
+
+
         unbinder = ButterKnife.bind(this, view);
         custPrograssbar = new CustPrograssbar();
         sessionManager = new SessionManager(getActivity());
@@ -160,7 +169,9 @@ public class PlaceOrderFragment extends Fragment implements View.OnClickListener
         for (int i = 0; i < paymentList.size(); i++) {
             LayoutInflater inflater = LayoutInflater.from(getActivity());
             PaymentItem paymentItem = paymentList.get(i);
+
             View view = inflater.inflate(R.layout.custome_paymen, null);
+
             ImageView imageView = view.findViewById(R.id.img_icon);
             TextView txt_title = view.findViewById(R.id.txt_title);
             txt_title.setText("" + paymentList.get(i).getTitle());

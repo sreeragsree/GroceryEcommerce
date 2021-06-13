@@ -53,7 +53,7 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
     User user;
     SessionManager sessionManager;
     String oid;
-    String id;
+    String id,orderID;
     @BindView(R.id.txt_orderid)
     TextView txtOrderid;
     @BindView(R.id.txt_subtotal)
@@ -103,6 +103,7 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details);
+
         requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, 1);
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -116,6 +117,7 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
         timeView.checkStateCompleted(true);
         Intent intent = getIntent();
         id = intent.getStringExtra("oid");
+        orderID = intent.getStringExtra("orderid");
         getHistry(id);
     }
 
@@ -151,24 +153,24 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
                         txtPikupmyself.setVisibility(View.VISIBLE);
                     } else {
                         txtPikupmyself.setVisibility(View.GONE);
-
                     }
                     phonecall = myOrder.getRiderMobile();
-                    txtOrderid.setText("" + myOrder.getmOrderid());
-                    txtCoupon.setText(sessionManager.getStringData(currncy)+ myOrder.getCounponDiscount());
+                  //  txtOrderid.setText("" + myOrder.getmOrderid());
+                    txtOrderid.setText("" + orderID);
+                    txtCoupon.setText(sessionManager.getStringData(currncy)+ " " + myOrder.getCounponDiscount());
                     txtStutus.setText("" + myOrder.getStatus());
                     txtDate.setText("" + myOrder.getOrderDate());
                     txtTimeslot.setText("" + myOrder.getTimesloat());
-                    txtDelivery.setText("" + sessionManager.getStringData(currncy) + myOrder.getdCharge());
+                    txtDelivery.setText("" + sessionManager.getStringData(currncy) +" "+ myOrder.getdCharge());
                     txtPtype.setText(" " + myOrder.getpMethod() + " ");
-                    txtQty.setText("" + list.size());
+                    txtQty.setText("" + list.size()+" Nos");
                     txtAddress.setText("" + myOrder.getAddress());
                     double tex = ((myOrder.getSubTotal()) / 100.0f) * myOrder.getTax();
-                    txtTax.setText(sessionManager.getStringData(currncy) + new DecimalFormat("##.##").format(tex));
+                    txtTax.setText(sessionManager.getStringData(currncy) +" "+ new DecimalFormat("##.##").format(tex));
                     txtTattt.setText("Tax(" + myOrder.getTax() + " %):");
 
-                    txtSubtotal.setText("" + sessionManager.getStringData(currncy) + new DecimalFormat("##.##").format(myOrder.getSubTotal()));
-                    txtTotal.setText("" + sessionManager.getStringData(currncy) + new DecimalFormat("##.##").format(myOrder.getTotalAmt()));
+                    txtSubtotal.setText("" + sessionManager.getStringData(currncy) +" "+ new DecimalFormat("##.##").format(myOrder.getSubTotal()));
+                    txtTotal.setText("" + sessionManager.getStringData(currncy) +" "+ new DecimalFormat("##.##").format(myOrder.getTotalAmt()));
                     oid = myOrder.getmOrderid();
                     if(myOrder.getCounponDiscount().equalsIgnoreCase("0")){
                         lvlCouponcode.setVisibility(View.GONE);
@@ -236,7 +238,7 @@ public class MyOrderListActivity extends BaseActivity implements GetResult.MyLis
                 txt_weight.setText(" " + list.get(i).getProductWeight());
                 double ress = (Double.parseDouble(list.get(i).getProductPrice()) * list.get(i).getDiscount()) / 100;
                 ress = Double.parseDouble(list.get(i).getProductPrice()) - ress;
-                txt_price.setText(sessionManager.getStringData(currncy) + ress);
+                txt_price.setText(sessionManager.getStringData(currncy)+ " "+ ress);
                 lnrView.addView(view);
             }
         }

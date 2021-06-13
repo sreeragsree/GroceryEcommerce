@@ -49,6 +49,7 @@ public class NotificationActivity extends AppCompatActivity implements GetResult
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+
         ButterKnife.bind(this);
         context=this;
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,7 +80,9 @@ public class NotificationActivity extends AppCompatActivity implements GetResult
                 Noti noti = list.get(i);
                 LayoutInflater inflater = LayoutInflater.from(NotificationActivity.this);
                 a = a + 1;
+
                 View view = inflater.inflate(R.layout.custome_noti, null);
+
                 LinearLayout lvl_bgcolor = view.findViewById(R.id.lvl_bgcolor);
                 TextView txt_name = view.findViewById(R.id.txt_orderid);
                 ImageView imgNoti = view.findViewById(R.id.imag_noti);

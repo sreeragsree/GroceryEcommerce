@@ -77,7 +77,7 @@
                     android:layout_marginBottom="22dp"
                     android:background="@drawable/detail_add_to_cart"
                     android:padding="5dp"
-                    android:textSize="21dp"
+                    android:textSize="17sp"
                     android:layout_gravity="center"
                     android:text="Post a Review"
                     android:elevation="5dp"

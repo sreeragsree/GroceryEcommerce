@@ -26,27 +26,23 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
 
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp">
 
                     <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_margin="5dp"
+                        android:id="@+id/my_recycler_view"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="vertical">
+                        android:layout_weight="1"
+                        android:visibility="visible" />
 
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/my_recycler_view"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:visibility="visible" />
-                        <LinearLayout
+                    <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
@@ -56,10 +52,10 @@
                             android:padding="5dp">
 
                             <ImageView
-                                android:layout_width="42dp"
-                                android:layout_height="42dp"
+                                android:layout_width="55dp"
+                                android:layout_height="55dp"
                                 android:padding="8dp"
-                                android:src="@drawable/ic_iconsticket_filled" />
+                                android:src="@drawable/coupon" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -72,13 +68,32 @@
                                 android:textSize="16dp"
                                 android:textStyle="bold" />
 
+                        <TextView
+                            android:id="@+id/tv_coupon"
+                            android:text="View Coupon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
                             <ImageView
+                                android:text="view coupon"
                                 android:id="@+id/img_coopncode"
-                                android:layout_width="42dp"
-                                android:layout_height="42dp"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
                                 android:padding="3dp"
-                                android:src="@drawable/ic_righta" />
+                                android:tint="@color/colorPrimaryDark"
+                                android:drawablePadding="5dp"
+                                android:drawableTint="@color/colorPrimaryDark"
+                                android:src="@drawable/ic_baseline_arrow_forward_24" />
+
                         </LinearLayout>
+
+                    <LinearLayout
+                        android:paddingTop="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -215,8 +230,13 @@
 
 
                         </LinearLayout>
+
+
                     </LinearLayout>
-                </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+
             </LinearLayout>
 
             <LinearLayout
@@ -272,7 +292,7 @@
                         android:gravity="center"
                         android:padding="5dp"
                         android:text="Change"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="@color/colorPrimaryDark"
                         android:textStyle="bold" />
                 </LinearLayout>
 
@@ -288,11 +308,11 @@
                         android:id="@+id/btn_cuntinus"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@drawable/rounded_green2"
+                        android:background="@drawable/detail_add_to_cart"
                         android:gravity="center"
                         android:padding="5dp"
                         android:text="Place order"
-                        android:textColor="@color/colorWhite"
+                        android:textColor="@color/buttongold"
                         android:textSize="18dp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -310,7 +330,8 @@
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="gone"
+            >
 
             <ImageView
                 android:layout_width="wrap_content"

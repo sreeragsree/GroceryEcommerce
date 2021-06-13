@@ -194,7 +194,13 @@ public class MyOrderFragment extends Fragment implements GetResult.MyListener {
                 txt_info.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        getActivity().startActivity(new Intent(getActivity(), MyOrderListActivity.class).putExtra("oid", orderData.get(finalI).getId()));
+                       // getActivity().startActivity(new Intent(getActivity(), MyOrderListActivity.class).putExtra());
+
+                        Intent intent = new Intent(getActivity(),MyOrderListActivity.class);
+                        intent.putExtra("oid", orderData.get(finalI).getId());
+                        intent.putExtra("orderid", orderData.get(finalI).getOid());
+                        Log.d("OrderID2255",orderData.get(finalI).getOid());
+                        getActivity().startActivity(intent);
                     }
                 });
             }

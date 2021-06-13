@@ -13,9 +13,9 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_otp_top" />
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:src="@drawable/otp" />
 
         <View
             android:layout_width="match_parent"
@@ -27,18 +27,18 @@
             android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
             android:text="Enter OTP"
-            android:textColor="@color/colorGrey1"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="18dp"
             android:textStyle="bold" />
 
         <TextView
+            android:paddingTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/coresans_cr_medium"
             android:gravity="center"
-            android:text="* * * * * *"
-            android:textColor="@color/colorPrimary"
-            android:textSize="30dp"
+            android:text="enter otp received in your registered \n mobile number"
+            android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
         <View
@@ -84,7 +84,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:layout_marginRight="5dp"
-                        android:textColorHint="@color/colorGrey"
                         android:visibility="visible">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -95,7 +94,7 @@
                             android:gravity="center"
                             android:maxLength="1"
                             android:textStyle="bold"
-                            android:textColor="@color/colorGrey2" />
+                            android:textColor="@color/colorPrimaryDark" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -114,7 +113,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:inputType="number"
-                            android:textColor="@color/colorGrey2" />
+                            android:textColor="@color/colorPrimaryDark" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -133,7 +132,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:inputType="number"
-                            android:textColor="@color/colorGrey2" />
+                            android:textColor="@color/colorPrimaryDark" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -152,7 +151,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:inputType="number"
-                            android:textColor="@color/colorGrey2" />
+                            android:textColor="@color/colorPrimaryDark" />
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="44dp"
@@ -170,7 +169,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:inputType="number"
-                            android:textColor="@color/colorGrey2" />
+                            android:textColor="@color/colorPrimaryDark" />
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="44dp"
@@ -188,7 +187,7 @@
                             android:gravity="center"
                             android:textStyle="bold"
                             android:inputType="number"
-                            android:textColor="@color/colorGrey2" />
+                            android:textColor="@color/colorPrimaryDark" />
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
@@ -200,11 +199,11 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="30dp"
                     android:layout_marginRight="20dp"
-                    android:background="@drawable/rounded_green2"
+                    android:background="@drawable/detail_add_to_cart"
                     android:elevation="10dp"
                     android:gravity="center"
                     android:text="Submit"
-                    android:textColor="@color/colorWhite" />
+                    android:textColor="@color/buttongold" />
 
 
                 <View
@@ -224,7 +223,7 @@
             android:gravity="center"
             android:padding="3dp"
             android:text="Did not receive the code?"
-            android:textColor="@color/colorGrey2" />
+            android:textColor="@color/buttongold" />
 
         <TextView
             android:id="@+id/btn_reenter"
@@ -237,7 +236,7 @@
             android:gravity="center"
             android:visibility="gone"
             android:text="Re-Send"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/colorPrimaryDark" />
 
         <TextView
             android:id="@+id/btn_timer"
@@ -249,7 +248,7 @@
             android:elevation="10dp"
             android:gravity="center"
             android:text="30"
-            android:textColor="@color/colorGrey2" />
+            android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
 
